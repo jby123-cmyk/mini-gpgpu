@@ -216,3 +216,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# verilator build and trace files
+build/
+*.fst
+*.vcd
+results.xml
+__pycache__/
+.venv/
