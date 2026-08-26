@@ -224,3 +224,6 @@ build/
 results.xml
 __pycache__/
 .venv/
+
+# other 
+.vscode/

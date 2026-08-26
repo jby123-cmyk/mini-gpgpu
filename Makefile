@@ -12,14 +12,15 @@ VERILOG_SOURCES := $(shell grep -v '^\s*\#' $(FILELIST) | grep -v '^\s*$$' | gre
 SIM_BUILD := $(REPO_ROOT)/build
 COCOTB_RESULTS_FILE := $(SIM_BUILD)/results.xml
 
-COCOTB_TOPLEVEL = counter
-COCOTB_TEST_MODULES = tb.test_counter
+COCOTB_TOPLEVEL = mul_bf16
+COCOTB_TEST_MODULES = tb.test_mul_bf16
 
 LZ4_PREFIX := $(shell brew --prefix lz4)
 
 COMPILE_ARGS += --trace --trace-fst --trace-structs \
 	-CFLAGS "-std=c++17 -I$(LZ4_PREFIX)/include" \
-	-LDFLAGS "-L$(LZ4_PREFIX)/lib -llz4"
+	-LDFLAGS "-L$(LZ4_PREFIX)/lib -llz4" \
+	+define+TESTMODE
 
 WAVEFORM := $(SIM_BUILD)/dump.fst
 SIM_ARGS += --trace --trace-file $(WAVEFORM)

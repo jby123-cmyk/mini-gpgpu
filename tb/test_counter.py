@@ -7,6 +7,7 @@ from cocotb.triggers import RisingEdge, ClockCycles
 async def test_counts(dut):
     cocotb.start_soon(Clock(dut.clk, 10, unit="ns").start())
 
+    # test signals
     dut.rst.value = 1
     await ClockCycles(dut.clk, 2)
     dut.rst.value = 0
