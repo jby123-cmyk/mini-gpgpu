@@ -3,3 +3,4 @@
 
 # rtl/counter.sv
 rtl/fma_unit.sv
+rtl/bf16_classify.sv
