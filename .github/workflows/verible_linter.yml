@@ -1,0 +1,18 @@
+name: Verible linter example
+on:
+  pull_request:
+    # branches:
+    #     - main
+
+  push:
+    # branches:
+        # - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: chipsalliance/verible-linter-action@main
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
