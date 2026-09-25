@@ -1,0 +1,13 @@
+name: CI Workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+    test-environment:
+        runs-on: ubuntu-latest
+        steps:
+            - run: lsb_release -a
